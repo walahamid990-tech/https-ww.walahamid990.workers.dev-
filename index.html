@@ -1,1 +1,456 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description" content="حلويات ولاء الزبيدي — مذاق بيتي وتفاصيل حلوة لكل مناسباتكم.">
+  <title>حلويات ولاء الزبيدي | حكاية حلوة في كل قطعة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #34251f;
+      --muted: #76665e;
+      --rose: #a64e52;
+      --rose-dark: #843d41;
+      --cream: #fffaf5;
+      --peach: #f8e9df;
+      --line: #eadbd1;
+      --green: #2f7657;
+      --serif: Georgia, "Times New Roman", serif;
+    }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "Tajawal", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+
+    .topbar {
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 38px;
+      gap: 16px;
+    }
+    .topbar a { color: var(--rose-dark); font-weight: 700; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgb(255 250 245 / 94%);
+      border-bottom: 1px solid rgb(234 219 209 / 75%);
+      backdrop-filter: blur(12px);
+    }
+    .nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--rose);
+      color: white;
+      font-family: var(--serif);
+      font-size: 1.35rem;
+    }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: #59473f; }
+    .nav-links a { font-size: .95rem; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--rose); }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--rose);
+      color: #fff;
+      font: 700 1rem "Tajawal", sans-serif;
+      transition: background .2s ease, transform .2s ease;
+      cursor: pointer;
+    }
+    .button:hover { background: var(--rose-dark); transform: translateY(-2px); }
+    .button.outline { border: 1px solid var(--rose); background: transparent; color: var(--rose-dark); }
+    .button.outline:hover { background: var(--peach); }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--ink);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 75px 0 82px;
+      background:
+        radial-gradient(ellipse at 9% 12%, rgb(230 182 158 / 22%), transparent 28%),
+        radial-gradient(ellipse at 90% 94%, rgb(166 78 82 / 10%), transparent 30%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 62px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 17px;
+      color: var(--rose-dark);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+    .eyebrow::before { width: 24px; height: 1px; background: currentColor; content: ""; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 580px;
+      margin-bottom: 19px;
+      font-size: clamp(2.8rem, 5vw, 4.65rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.17;
+    }
+    h1 span { color: var(--rose); }
+    .hero-copy > p { max-width: 490px; margin-bottom: 27px; color: var(--muted); font-size: 1.13rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 27px; color: var(--muted); font-size: .9rem; }
+    .note-dot { display: grid; width: 28px; height: 28px; place-items: center; border-radius: 50%; background: #e7f0e9; color: var(--green); }
+    .hero-image { position: relative; padding: 0 0 22px 22px; }
+    .hero-image::before {
+      position: absolute;
+      inset: 23px 23px 0 0;
+      border: 1px solid #d5afa0;
+      border-radius: 48% 48% 9px 9px;
+      content: "";
+    }
+    .hero-image img {
+      position: relative;
+      height: 475px;
+      border-radius: 48% 48% 9px 9px;
+      object-fit: cover;
+      box-shadow: 0 22px 55px rgb(75 42 32 / 15%);
+    }
+    .image-caption {
+      position: absolute;
+      right: -14px;
+      bottom: 45px;
+      max-width: 180px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--cream);
+      box-shadow: 0 10px 24px rgb(75 42 32 / 9%);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    section { padding: 82px 0; }
+    .section-heading { max-width: 620px; margin: 0 auto 38px; text-align: center; }
+    .section-heading .eyebrow { justify-content: center; }
+    .section-heading h2 { margin-bottom: 9px; font-size: clamp(2rem, 3.4vw, 2.8rem); line-height: 1.25; }
+    .section-heading p { margin-bottom: 0; color: var(--muted); }
+    .menu-section { background: #fff; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .sweet-card {
+      overflow: hidden;
+      border: 1px solid #f0e4dd;
+      border-radius: 15px;
+      background: var(--cream);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .sweet-card:hover { transform: translateY(-5px); box-shadow: 0 16px 35px rgb(75 42 32 / 9%); }
+    .sweet-card img { height: 235px; object-fit: cover; }
+    .card-body { padding: 20px 21px 22px; }
+    .card-title { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+    .card-title h3 { margin: 0; font-size: 1.24rem; }
+    .card-tag { color: var(--rose); font-size: .82rem; font-weight: 700; white-space: nowrap; }
+    .card-body p { margin-bottom: 0; color: var(--muted); font-size: .94rem; }
+
+    .about { background: var(--peach); }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 65px; }
+    .about-photo { position: relative; }
+    .about-photo img { height: 390px; border-radius: 10px 100px 10px 10px; object-fit: cover; }
+    .about-photo::after {
+      position: absolute;
+      z-index: 0;
+      inset: 15px -15px -15px 15px;
+      border: 1px solid #c99583;
+      border-radius: 10px 100px 10px 10px;
+      content: "";
+    }
+    .about-photo img { position: relative; z-index: 1; }
+    .about-copy h2 { margin-bottom: 16px; font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.25; }
+    .about-copy > p { color: var(--muted); }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; }
+    .value { display: flex; align-items: flex-start; gap: 11px; }
+    .value-icon { display: grid; flex: 0 0 34px; height: 34px; place-items: center; border-radius: 50%; background: #fffaf5; color: var(--rose); }
+    .value strong { display: block; margin-bottom: 1px; }
+    .value span:last-child { color: var(--muted); font-size: .88rem; }
+
+    .occasion { padding: 63px 0; background: var(--rose-dark); color: white; text-align: center; }
+    .occasion h2 { max-width: 700px; margin: 0 auto 12px; font-size: clamp(1.9rem, 3.4vw, 2.65rem); line-height: 1.3; }
+    .occasion p { margin-bottom: 23px; color: #f4deda; }
+    .occasion .button { background: #fffaf5; color: var(--rose-dark); }
+    .occasion .button:hover { background: #f4e3d9; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; align-items: start; }
+    .contact-copy h2 { margin-bottom: 10px; font-size: 2.45rem; line-height: 1.25; }
+    .contact-copy > p { color: var(--muted); }
+    .contact-card { display: flex; align-items: center; gap: 16px; margin-top: 25px; padding: 20px; border: 1px solid var(--line); border-radius: 13px; background: white; }
+    .contact-icon { display: grid; flex: 0 0 48px; height: 48px; place-items: center; border-radius: 50%; background: #e7f0e9; color: var(--green); font-size: 1.25rem; }
+    .contact-card small { display: block; color: var(--muted); }
+    .contact-card strong { direction: ltr; display: inline-block; font: 700 1.2rem "DM Sans", sans-serif; }
+    .contact-card .button { margin-right: auto; padding-inline: 17px; }
+    .contact-side { padding: 27px; border-radius: 15px; background: var(--peach); }
+    .contact-side h3 { margin-bottom: 8px; font-size: 1.35rem; }
+    .contact-side p { margin-bottom: 0; color: var(--muted); }
+    footer { padding: 22px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+    .footer-inner p { margin: 0; }
+    .footer-inner a { color: var(--rose-dark); font-weight: 700; }
+
+    @media (max-width: 820px) {
+      .nav-links { gap: 17px; }
+      .nav > .button { display: none; }
+      .hero-grid { gap: 35px; }
+      .hero-image img { height: 400px; }
+      .cards { gap: 14px; }
+      .sweet-card img { height: 190px; }
+      .about-grid { gap: 38px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 36px, 480px); }
+      .topbar-inner { justify-content: center; }
+      .topbar-inner span { display: none; }
+      .nav { min-height: 66px; }
+      .brand { font-size: 1rem; }
+      .brand-mark { width: 38px; height: 38px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 18px 15px;
+        border-bottom: 1px solid var(--line);
+        background: var(--cream);
+      }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links a { padding: 10px 4px; }
+      .hero { padding: 48px 0 58px; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 37px; }
+      h1 { font-size: clamp(2.65rem, 13vw, 3.5rem); }
+      .hero-copy > p { font-size: 1.03rem; }
+      .hero-image { width: 88%; margin-inline: auto; }
+      .hero-image img { height: 355px; }
+      .image-caption { right: -19px; bottom: 34px; }
+      section { padding: 62px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .sweet-card img { height: 245px; }
+      .about-grid { gap: 38px; }
+      .about-photo { width: calc(100% - 14px); margin-inline: auto; }
+      .about-photo img { height: 320px; }
+      .values { gap: 13px; }
+      .contact-grid { gap: 26px; }
+      .contact-copy h2 { font-size: 2rem; }
+      .contact-card { flex-wrap: wrap; }
+      .contact-card .button { margin-right: 0; }
+      .footer-inner { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <span>تفاصيل صغيرة، فرحة كبيرة</span>
+      <a href="tel:+966579982445" aria-label="اتصلي بولاء على 0579982445">للطلب والاستفسار: <bdi>0579982445</bdi></a>
+    </div>
+  </div>
+  <header>
+    <nav class="wrap nav" aria-label="القائمة الرئيسية">
+      <a class="brand" href="#home" aria-label="حلويات ولاء الزبيدي، الرئيسية">
+        <span class="brand-mark" aria-hidden="true">و</span>
+        <span>حلويات ولاء الزبيدي</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false" aria-controls="nav-links">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#menu">حلوياتنا</a>
+        <a href="#about">حكايتنا</a>
+        <a href="#contact">تواصلوا معنا</a>
+      </div>
+      <a class="button" href="https://wa.me/966579982445?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%88%D9%84%D8%A7%D8%A1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%B7%D9%84%D8%A8">اطلبي الآن <span aria-hidden="true">←</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">حلا بيتي بمحبة</span>
+          <h1>حكاية حلوة<br><span>في كل قطعة</span></h1>
+          <p>من مطبخ ولاء إلى مائدتكم، نخبز لحظاتكم السعيدة بحلويات محضّرة بعناية ولمسة بيتية دافئة.</p>
+          <div class="hero-actions">
+            <a class="button" href="#menu">تصفّحي حلوياتنا <span aria-hidden="true">←</span></a>
+            <a class="button outline" href="#about">تعرّفي على ولاء</a>
+          </div>
+          <div class="hero-note"><span class="note-dot" aria-hidden="true">✓</span> تُحضّر طازجة بكل حب، حسب طلبكم</div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="كيكة شوكولاتة مزينة بالفواكه" fetchpriority="high">
+          <div class="image-caption">لأن أجمل اللحظات<br>تستحق حلاها الخاص ✨</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">من قائمتنا</span>
+          <h2>اختاري حلاوتك</h2>
+          <p>تشكيلة محضّرة بمحبة، وتفاصيلها قابلة للتخصيص على ذوقكم.</p>
+        </div>
+        <div class="cards">
+          <article class="sweet-card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="كيكة شوكولاتة للمناسبات" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><h3>كيكات المناسبات</h3><span class="card-tag">حسب الطلب</span></div>
+              <p>كيكات بطبقات ونكهات تختارينها، بلمسة أنيقة تناسب فرحتكم.</p>
+            </div>
+          </article>
+          <article class="sweet-card">
+            <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="حلى كريمي بالفواكه الطازجة" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><h3>حلى الكاسات</h3><span class="card-tag">طازج ولذيذ</span></div>
+              <p>طبقات كريمية بنكهات متنوعة، خيار لطيف للضيافة والجمعة الحلوة.</p>
+            </div>
+          </article>
+          <article class="sweet-card">
+            <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&amp;fit=crop&amp;w=800&amp;q=80" alt="قطع حلوى صغيرة مزينة" loading="lazy">
+            <div class="card-body">
+              <div class="card-title"><h3>توزيعات وضيافة</h3><span class="card-tag">تفاصيل خاصة</span></div>
+              <p>قطع صغيرة وتنسيقات جميلة تضيف لمسة حلوة لمناسباتكم.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-photo">
+          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="تحضير الحلويات في المطبخ" loading="lazy">
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">حكاية ولاء</span>
+          <h2>من القلب…<br>إلى مائدتكم</h2>
+          <p>أنا ولاء الزبيدي، أؤمن أن الحلوى ليست مجرد مذاق؛ هي طريقة جميلة للاحتفال بمن نحب. أجهّز كل طلب بعناية، وأهتم بالتفاصيل من أول اختيار النكهة إلى آخر لمسة.</p>
+          <div class="values">
+            <div class="value"><span class="value-icon" aria-hidden="true">♡</span><span><strong>محضّرة بمحبة</strong><span>اهتمام في كل تفصيلة</span></span></div>
+            <div class="value"><span class="value-icon" aria-hidden="true">✦</span><span><strong>على ذوقكم</strong><span>نكهات وتنسيقات حسب الطلب</span></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="occasion">
+      <div class="wrap">
+        <h2>عندكم مناسبة؟ خلّوا الحلا علينا</h2>
+        <p>شاركونا فكرتكم، ونرتّب لكم حلا يليق بفرحتكم.</p>
+        <a class="button" href="https://wa.me/966579982445?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%88%D9%84%D8%A7%D8%A1%D8%8C%20%D8%B9%D9%86%D8%AF%D9%8A%20%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A9%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1">احكي لنا عن مناسبتك <span aria-hidden="true">←</span></a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">نحن هنا لأجلكم</span>
+          <h2>جاهزين لطلبكم؟</h2>
+          <p>للطلب أو الاستفسار عن النكهات والتفاصيل، تواصلي معنا مباشرة.</p>
+          <div class="contact-card">
+            <span class="contact-icon" aria-hidden="true">✆</span>
+            <span><small>اتصال أو واتساب</small><strong>0579982445</strong></span>
+            <a class="button" href="https://wa.me/966579982445?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%88%D9%84%D8%A7%D8%A1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%B7%D9%84%D8%A8" aria-label="اطلبي عبر واتساب">واتساب</a>
+          </div>
+        </div>
+        <aside class="contact-side">
+          <h3>حلويات ولاء الزبيدي</h3>
+          <p>كل قطعة تُحضّر لتصنع ذكرى حلوة. يسعدنا استقبال طلباتكم واستفساراتكم على الرقم <bdi>0579982445</bdi>.</p>
+          <a class="button" href="https://ww.walahamid990.workers.dev/" target="_blank" rel="noopener noreferrer">زيارة موقعنا الإلكتروني <span aria-hidden="true">↗</span></a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> حلويات ولاء الزبيدي. جميع الحقوق محفوظة.</p>
+      <a href="tel:+966579982445"><bdi>0579982445</bdi></a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "فتح القائمة" : "إغلاق القائمة");
+      navLinks.classList.toggle("open", !isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.closest("a")) {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "فتح القائمة");
+      }
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
